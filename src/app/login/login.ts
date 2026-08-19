@@ -1,14 +1,17 @@
 import { Component, inject } from '@angular/core';
 import{signal} from '@angular/core';
 import { LoginService } from './login-service';
+import { PracticeInterface } from "../practice-interface/practice-interface";
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [PracticeInterface],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
-  constructor(private loginService:LoginService){
+  fromProfile:string = '';
+  constructor(private loginService:LoginService,
+  ){
     
   }
   ngOnInit(){
@@ -40,4 +43,9 @@ users(){
     this.count.set(0);
   }
 
+    onPracticeData(data: string): void {
+    this.fromProfile = data;
+
+    console.log('Received from child:', data);
+  }
 }

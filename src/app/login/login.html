@@ -6,3 +6,11 @@
 <div (click)="decrement()" class="decrement">-</div>
 
 <div (click)="reset()" class="reset">reset</div>
+
+<app-practice-interface
+  (practiceData)="onPracticeData($event)">
+</app-practice-interface>
+
+<h3>Data Received From Child:</h3>
+
+<p>{{ fromProfile }}</p>
