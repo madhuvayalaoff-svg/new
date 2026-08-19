@@ -1,7 +1,8 @@
 <p>practice-interface works!</p>
 
 <ul>
-   @for (item of user(); track $index) {
-<li>{{item.name}}</li>
+   @for (item of userData; track $index) {
+<li>{{item.name}},{{item.username}} -{{item.email}}={{item.phone}}</li>
    }
 </ul>
+
